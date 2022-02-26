@@ -147,7 +147,7 @@ printf "\e[1;93m [!] Invalid tunnel option! try again\e[0m\n"
 sleep 1
 clear
 banner
-camphish
+camAccess
 else
 printf "\n-----Choose a template----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Festival Wishing\e[0m\n"
@@ -311,4 +311,4 @@ checkfound
 
 banner
 dependencies
-camphish
+camAccess

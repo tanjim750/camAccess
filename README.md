@@ -20,8 +20,8 @@ apt-get -y install php openssh git wget
 
 ```
 git clone https://github.com/tanjim750/camAccess.git
-cd CamAccess
-bash camaccess.sh
+cd camAccess
+bash camAccess.sh
 ```
 
 ## Current Version 1.2

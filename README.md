@@ -1,6 +1,6 @@
 
 
-## This Tool Tested On :
+## You Can Try This Tool On :
 <ul>
   <li>Kali Linux</li>
   <li>Termux</li>
@@ -9,14 +9,14 @@
   <li>Parrot Sec OS</li>
 </ul>
 
-# Installing and requirements
-<p>This tool require PHP for webserver, SSH or serveo link. First run following command on your terminal</p>
+# Requirements
+<p>Run following command on your terminal</p>
 
 ```
 apt-get -y install php openssh git wget
 ```
 
-## Installing (Kali Linux/Termux):
+## Install In Kali Or Termux:
 
 ```
 git clone https://github.com/tanjim750/camAccess.git
@@ -24,8 +24,10 @@ cd CamAccess
 bash camaccess.sh
 ```
 
-## Change Log:
+## Current Version 1.2
 
-<p><b>Version: 1.5:</b> Add new online meeting template</p>
-<p><b>Version: 1.4:</b> Ngrok authtoken update</p>
-<p><b>Version: 1.3:</b> Fix ngrok direct link</p>
+## Visit my site : 
+https://tanjim.ga
+
+
+

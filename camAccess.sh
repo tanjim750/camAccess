@@ -1,5 +1,5 @@
 #!/bin/bash
-# CamPhish v1.5
+# CamPhish v1.2
 # Powered by Tanjim Abubokor
 # Credits goes to TechChip
 
@@ -10,17 +10,17 @@ clear
 
 printf "\e[1;92m ╭━━━╮\e[0m\n"
 
-printf "\e[1;92m ┃╭━╮┃\e[0m\n"
+printf "\e[2;92m ┃╭━╮┃\e[0m\n"
 
-printf "\e[1;92m ┃┃╱╰╋━━┳╮╭╮\e[0m\e[1;77m╭━━┳━━┳━━┳━━┳━━┳━━╮\e[0m\n"
+printf "\e[2;92m ┃┃╱╰╋━━┳╮╭╮\e[0m\e[2;77m╭━━┳━━┳━━┳━━┳━━┳━━╮\e[0m\n"
 
-printf "\e[1;92m ┃┃╱╭┫╭╮┃╰╯┃\e[0m\e[1;77m┃╭╮┃╭━┫╭━┫┃━┫━━┫━━┫\e[0m\n"
+printf "\e[2;92m ┃┃╱╭┫╭╮┃╰╯┃\e[0m\e[2;77m┃╭╮┃╭━┫╭━┫┃━┫━━┫━━┫\e[0m\n"
 
-printf "\e[1;92m ┃╰━╯┃╭╮┃┃┃┃\e[0m\e[1;77m┃╭╮┃╰━┫╰━┫┃━╋━━┣━━┃\e[0m\n"
+printf "\e[2;92m ┃╰━╯┃╭╮┃┃┃┃\e[0m\e[2;77m┃╭╮┃╰━┫╰━┫┃━╋━━┣━━┃\e[0m\n"
 
-printf "\e[1;92m ╰━━━┻╯╰┻┻┻╯\e[0m\e[1;77m╰╯╰┻━━┻━━┻━━┻━━┻━━╯\e[0m\n"
+printf "\e[2;92m ╰━━━┻╯╰┻┻┻╯\e[0m\e[2;77m╰╯╰┻━━┻━━┻━━┻━━┻━━╯\e[0m\n"
 printf " \e[1;93m CamAccess Ver 1.0 \e[0m \n"
-printf " \e[1;77m https://tanjim.cf | Developed by Tanjim Abubokor \e[0m \n"
+printf " \e[2;77m https://tanjim.ga | Developed by Tanjim Abubokor \e[0m \n"
 
 printf "\n"
 
@@ -134,8 +134,6 @@ sed 's+fes_name+'$fest_name'+g' index3.html > index2.html
 elif [[ $option_tem -eq 2 ]]; then
 sed 's+forwarding_link+'$link'+g' LiveYTTV.html > index3.html
 sed 's+live_yt_tv+'$yt_video_ID'+g' index3.html > index2.html
-else
-sed 's+forwarding_link+'$link'+g' OnlineMeeting.html > index2.html
 fi
 rm -rf index3.html
 
@@ -151,7 +149,7 @@ camAccess
 else
 printf "\n-----Choose a template----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Custom Site\e[0m\n"
-printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Live Youtube TV\e[0m\n"
+printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Youtube \e[0m\n"
 
 default_option_template="1"
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a template: [Default is 1] \e[0m' option_tem

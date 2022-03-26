@@ -149,9 +149,10 @@ camAccess
 else
 printf "\n-----Choose a template----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Custom Site
-[@Please read first.
- At first you have to edit file called customsite.html
- Type nano customsite.html And then paste your site source code.]\e[0m\n"
+
+printf "\n@Please read first.\n"
+printf "\n At first you have to edit file called customsite.html
+ Type nano customsite.html And paste your site source code.\n"
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Youtube \e[0m\n"
 
 default_option_template="1"

